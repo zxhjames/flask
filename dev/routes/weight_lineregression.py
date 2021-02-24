@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-02-22 12:56:02
-LastEditTime: 2021-02-22 16:36:36
+LastEditTime: 2021-02-23 11:17:35
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /PyCode/project_demo/flask/dev/utils/weight_lineregression.py
@@ -13,6 +13,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 import time
 import csv
+import json
 from fbprophet import Prophet
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import LinearRegression 
@@ -138,7 +139,7 @@ def predict_prophet(x,y,n):
     future = model.make_future_dataframe(periods=futureday,freq='D') # 预测未来
     forecast = model.predict(future)
     print(forecast['trend'])
-    return forecast['trend']
+    return json(forecast['trend'])
 
 # r = predict_prophet(['2020-01-01','2020-01-02','2020-01-03'],[1,2,3],4)
 # print(r)

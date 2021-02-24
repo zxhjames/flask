@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-02-22 10:20:16
-LastEditTime: 2021-02-22 16:35:13
+LastEditTime: 2021-02-23 11:19:14
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /PyCode/project_demo/flask/dev/routes/routers.py
@@ -51,7 +51,8 @@ def Get_Predict_Ans(x,y,n,t):
         res = weight_lineregression.predict_prophet(x,y,n)
         print("prophet")
 
+    print(res)
     return jsonify({
-        "res":res
+        "res":"ok"
     })
 
